@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import LoginRegister from './LoginRegistrater/LoginRegister';
+// // src/App.js
+import React from "react";
+import Dashboard from "./Pages/dashboard";
 
 function App() {
   return (
     <div>
-      <LoginRegister/>
+      <Dashboard />
     </div>
   );
 }
