@@ -12,7 +12,7 @@ export default function Dashboard() {
           <div className="avatar">
             <span className="status" />
           </div>
-          <h1 className="brand">CodeJourney</h1>
+          <h1 className="brand">ALS</h1>
           <button className="icon-button bell" aria-label="Notifications">
             {/* Bell icon (inline SVG) */}
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">

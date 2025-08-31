@@ -1,0 +1,108 @@
+/* Page layout */
+.quiz-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card box */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Titles */
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.question {
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+  color: #444;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+}
+
+.btn-option {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.btn-option:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  transition: width 0.4s ease;
+}
+
+/* Score */
+.score {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #444;
+}
+
+.score span {
+  font-weight: bold;
+  color: #9333ea;
+}
+
+/* Question counter */
+.question-count {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
