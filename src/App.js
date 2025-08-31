@@ -41,7 +41,7 @@ import QuizPage from "./Pages/quizpage";
 function App() {
   return (
     <div>
-      <QuizPage />
+      <QuizPage/>
     </div>
   );
 }

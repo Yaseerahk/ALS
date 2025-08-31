@@ -1,108 +1,90 @@
-/* Page layout */
-.quiz-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* src/Pages/quizpage.css */
+
+/* Container */
+.quiz-screen {
+  @apply bg-gray-900 min-h-screen text-white flex flex-col items-center px-6 py-8;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Card box */
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
+/* Header Section */
+.quiz-header {
+  @apply w-full relative flex items-center justify-between mb-6;
 }
 
-/* Titles */
-.title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #333;
+.exit-button {
+  @apply text-white text-2xl absolute left-0;
 }
 
-.question {
-  font-size: 1.3rem;
-  margin: 1.2rem 0;
-  color: #444;
-}
-
-/* Buttons */
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #6366f1, #a855f7);
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #4f46e5, #9333ea);
-}
-
-.btn-option {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 1rem;
-}
-
-.btn-option:hover {
-  background: #eef2ff;
-  border-color: #6366f1;
-}
-
-/* Progress bar */
 .progress-bar {
-  height: 8px;
-  width: 100%;
-  background: #e5e7eb;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  overflow: hidden;
+  @apply bg-gray-700 rounded-full h-2 flex-grow mx-8 relative overflow-hidden;
 }
 
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #6366f1, #a855f7);
-  transition: width 0.4s ease;
+.progress {
+  @apply bg-orange-400 h-full absolute top-0 left-0 transition-all duration-300;
 }
 
-/* Score */
-.score {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  color: #444;
+.progress-count {
+  @apply text-sm text-white absolute right-0;
 }
 
-.score span {
-  font-weight: bold;
-  color: #9333ea;
+/* Timer Circle */
+.timer-circle {
+  @apply w-12 h-12 rounded-full border-4 border-blue-400 text-center text-xl font-bold flex items-center justify-center mb-6;
 }
 
-/* Question counter */
-.question-count {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #666;
+/* Question */
+.quiz-question {
+  @apply text-lg font-semibold text-center mb-6;
+}
+
+/* Options */
+.quiz-options {
+  @apply w-full flex flex-col gap-4;
+}
+
+.option-btn {
+  @apply w-full py-3 px-4 rounded-xl bg-gray-800 border-2 border-gray-700 text-white text-left font-medium transition duration-200;
+}
+
+.option-btn:hover:not(:disabled) {
+  @apply bg-gray-700;
+}
+
+.option-btn.selected {
+  @apply border-blue-500 bg-blue-900;
+}
+
+.option-btn.correct {
+  @apply border-green-500 bg-green-800;
+}
+
+.option-btn.incorrect {
+  @apply border-red-500 bg-red-800;
+}
+
+/* Next Button */
+.next-btn {
+  @apply mt-6 w-full py-3 bg-blue-500 text-white font-semibold rounded-xl text-lg hover:bg-blue-600 transition duration-300;
+}
+
+/* Primary Button (for language selection & restart) */
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-3 rounded-xl text-lg font-semibold hover:scale-105 transform transition duration-300 shadow-lg;
+}
+
+/* Topic Selection Grid */
+.topic-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-5 w-full;
+}
+
+.topic-card {
+  @apply bg-gray-800 border-2 border-gray-700 text-white rounded-2xl py-6 px-4 flex flex-col items-center justify-center font-semibold text-lg hover:bg-gray-700 hover:scale-105 transition duration-300;
+}
+
+.topic-emoji {
+  @apply text-4xl mb-3;
+}
+
+.topic-label {
+  @apply text-white text-lg font-semibold;
 }
