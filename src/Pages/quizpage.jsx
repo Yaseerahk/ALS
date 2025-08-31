@@ -8,33 +8,69 @@ function QuizPage() {
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+const quizzes = {
+  HTML: [
+    {
+      question: "Which tag is used to create a hyperlink in HTML?",
+      options: ["<link>", "<a>", "<href>", "<url>"],
+      correct: "<a>",
+    },
+    {
+      question: "What does the <img> tag require?",
+      options: ["src", "alt", "href", "both src and alt"],
+      correct: "both src and alt",
+    },
+  ],
+  CSS: [
+    {
+      question: "Which property is used to change text color in CSS?",
+      options: ["font-color", "text-color", "color", "background-color"],
+      correct: "color",
+    },
+    {
+      question: "Which CSS unit is relative to the root element?",
+      options: ["em", "rem", "%", "px"],
+      correct: "rem",
+    },
+  ],
+  Java: [
+    {
+      question: "Which keyword is used to inherit a class in Java?",
+      options: ["this", "super", "extends", "implements"],
+      correct: "extends",
+    },
+    {
+      question: "Which of these is NOT a Java primitive type?",
+      options: ["int", "float", "boolean", "string"],
+      correct: "string",
+    },
+  ],
+  JavaScript: [
+    {
+      question: "Which keyword declares a variable in JavaScript?",
+      options: ["var", "let", "const", "all of the above"],
+      correct: "all of the above",
+    },
+    {
+      question: "Which method is used to parse JSON strings?",
+      options: ["JSON.parse()", "JSON.stringify()", "parse.JSON()", "toJSON()"],
+      correct: "JSON.parse()",
+    },
+  ],
+  Python: [
+    {
+      question: "Which keyword is used to define a function in Python?",
+      options: ["function", "def", "func", "lambda"],
+      correct: "def",
+    },
+    {
+      question: "Which data type is returned by input() in Python?",
+      options: ["int", "string", "float", "boolean"],
+      correct: "string",
+    },
+  ],
+};
 
-  const quizzes = {
-    JavaScript: [
-      {
-        question: "Which keyword declares a variable in JavaScript?",
-        options: ["var", "let", "const", "all of the above"],
-        correct: "all of the above",
-      },
-      {
-        question: "Which method is used to parse JSON strings?",
-        options: ["JSON.parse()", "JSON.stringify()", "parse.JSON()", "toJSON()"],
-        correct: "JSON.parse()",
-      },
-    ],
-    Python: [
-      {
-        question: "Which keyword is used to define a function in Python?",
-        options: ["function", "def", "func", "lambda"],
-        correct: "def",
-      },
-      {
-        question: "Which data type is returned by input() in Python?",
-        options: ["int", "string", "float", "boolean"],
-        correct: "string",
-      },
-    ],
-  };
 
   const handleAnswer = (option) => {
     setAnswer(option);
