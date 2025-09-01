@@ -2,25 +2,41 @@ import React, { useState } from "react";
 import './LoginRegister.css';
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const LoginRegister = () => {
+const LoginRegister = ({ setIsAuthenticated }) => {
   const [isRegister, setIsRegister] = useState(false);
+  const navigate = useNavigate();
 
   const showRegister = () => setIsRegister(true);
   const showLogin = () => setIsRegister(false);
 
-  
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    // ✅ Simulate successful registration
+    setIsAuthenticated(true);
+    navigate("/dashboard");
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // ✅ Simulate successful login
+    setIsAuthenticated(true);
+    navigate("/dashboard");
+  };
+
   const variants = {
-    hidden: { opacity: 0, x: 50 },   
-    visible: { opacity: 1, x: 0 },   
-    exit: { opacity: 0, x: -50 }     
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -50 }
   };
 
   return (
     <div className="wrapper">
       <AnimatePresence mode="wait">
         {!isRegister ? (
-         
           <motion.div
             key="login"
             className="form-box login"
@@ -30,7 +46,7 @@ const LoginRegister = () => {
             exit="exit"
             transition={{ duration: 0.4 }}
           >
-            <form>
+            <form onSubmit={handleLogin}>
               <h1>Login</h1>
               <div className="input-box">
                 <input type="text" placeholder="Username" required />
@@ -42,7 +58,6 @@ const LoginRegister = () => {
               </div>
               <div className="remember-forgot">
                 <label><input type="checkbox" /> Remember Me</label>
-
                 <button type="button" className="link-button">Forgot password?</button>
               </div>
               <button type="submit">Login</button>
@@ -57,7 +72,6 @@ const LoginRegister = () => {
             </form>
           </motion.div>
         ) : (
-       
           <motion.div
             key="register"
             className="form-box register"
@@ -67,7 +81,7 @@ const LoginRegister = () => {
             exit="exit"
             transition={{ duration: 0.4 }}
           >
-            <form>
+            <form onSubmit={handleRegister}>
               <h1>Registration</h1>
               <div className="input-box">
                 <input type="text" placeholder="Username" required />

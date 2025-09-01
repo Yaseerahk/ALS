@@ -1,8 +1,13 @@
 import React from "react";
 import "./dashboard.css";
+import { useNavigate } from "react-router-dom"; 
 
 export default function Dashboard() {
   const percent = 70;
+  const navigate = useNavigate(); 
+  const handleQuizClick = () => {
+    navigate("/quiz"); 
+  };
 
   return (
     <div className="dash-shell">
@@ -14,7 +19,6 @@ export default function Dashboard() {
           </div>
           <h1 className="brand">ALS</h1>
           <button className="icon-button bell" aria-label="Notifications">
-            {/* Bell icon (inline SVG) */}
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               <path d="M12 2a6 6 0 0 0-6 6v2.3c0 .7-.26 1.38-.73 1.9L3.7 15a1 1 0 0 0 .77 1.66h15.06a1 1 0 0 0 .77-1.66l-1.57-1.8a2.7 2.7 0 0 1-.73-1.9V8a6 6 0 0 0-6-6Z" fill="currentColor"/>
               <path d="M9.5 19a2.5 2.5 0 0 0 5 0" fill="currentColor"/>
@@ -87,7 +91,7 @@ export default function Dashboard() {
             You mastered loops—try <strong>JavaScript Functions</strong> next!
           </p>
           <div className="cta">
-            <button className="btn primary">Quiz Me</button>
+            <button className="btn primary" onClick={handleQuizClick}>Quiz Me</button>
             <button className="btn ghost">Study Plan</button>
           </div>
         </section>
