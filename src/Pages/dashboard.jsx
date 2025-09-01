@@ -55,6 +55,7 @@ export default function Dashboard() {
             <div className="badge earned">
               <div className="badge-icon check">
                 <svg viewBox="0 0 24 24" width="26" height="26">
+                  {/* tick */}
                   <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -65,6 +66,7 @@ export default function Dashboard() {
             <div className="badge earned">
               <div className="badge-icon star">
                 <svg viewBox="0 0 24 24" width="26" height="26">
+                  {/* star */}
                   <path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.8 6.2 20.8l1.1-6.4L2.6 9.8l6.5-.9L12 3z" fill="currentColor"/>
                 </svg>
               </div>
@@ -75,6 +77,7 @@ export default function Dashboard() {
             <div className="badge locked">
               <div className="badge-icon lock">
                 <svg viewBox="0 0 24 24" width="26" height="26">
+                  {/* lock */}
                   <path d="M17 9h-1V7a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2Zm-6 7a1 1 0 1 1 2 0v1h-2v-1Zm3-7H10V7a2 2 0 1 1 4 0v2Z" fill="currentColor"/>
                 </svg>
               </div>
