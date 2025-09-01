@@ -3,19 +3,19 @@ import React from "react";
 
 
 
-// import LoginRegister from "./LoginRegistrater/LoginRegister";
+import LoginRegister from "./LoginRegistrater/LoginRegister";
 
 
-// function App() {
-//   return (
-//     <div>
-//       <LoginRegister />
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div>
+      <LoginRegister />
+    </div>
+  );
+}
 
 
-// export default App;
+export default App;
 
 
 
@@ -34,17 +34,17 @@ import React from "react";
 
 
 
-import QuizPage from "./Pages/quizpage";
+// import QuizPage from "./Pages/quizpage";
 
 
 
-function App() {
-  return (
-    <div>
-      <QuizPage/>
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <QuizPage/>
+//     </div>
+//   );
+// }
 
 
-export default App;
+// export default App;
