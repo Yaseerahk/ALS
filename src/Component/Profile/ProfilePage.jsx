@@ -5,6 +5,8 @@ import './ProfilePage.css';
 const ProfilePage = () => {
   return (
     <div className="profile-container">
+
+      {/* profile header section */}
       <div className="profile-header">
         <div className="profile-info">
           <h2>Name of User</h2>
@@ -16,6 +18,7 @@ const ProfilePage = () => {
       <div className="profile-content">
         <div className="progress-section">
           <h3>Progress</h3>
+          {/* show learning status + topics */}
           <ul className="progress-list">
             <li>☑ Topic 1</li>
             <li>☑ Topic 2</li>
@@ -29,7 +32,7 @@ const ProfilePage = () => {
           <div className="badges-grid">
             <div className="badge-item">Badge 1</div>
             <div className="badge-item">Badge 2</div>
-            {/* Add more badges */}
+            <div className="badge-item">Badge 3</div>
           </div>
         </div>
       </div>

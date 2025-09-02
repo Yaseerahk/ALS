@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
+//relevant page components
 import LoginRegister from "./LoginRegistrater/LoginRegister";
 import Dashboard from "./Pages/dashboard";
 import QuizPage from "./Pages/quizpage";
@@ -14,18 +15,22 @@ function App() {
         <Route
           path="/"
           element={
+            // If authenticated, redirect to dashboard, or else show login/register page
             isAuthenticated ? <Navigate to="/dashboard" /> : <LoginRegister setIsAuthenticated={setIsAuthenticated} />
           }
         />
         <Route
+        //to dash only is authenticated 
           path="/dashboard"
           element={
+              // Redirect unauthenticated users back to login page
             isAuthenticated ? <Dashboard /> : <Navigate to="/" />
           }
         />
         <Route
           path="/quiz"
           element={
+            //not authenticated redirect back to login
             isAuthenticated ? <QuizPage /> : <Navigate to="/" />
           }
         />

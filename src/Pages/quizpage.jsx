@@ -3,12 +3,17 @@ import React, { useState } from "react";
 import "./quizpage.css";
 
 function QuizPage() {
+  // quiz states
   const [selectedLanguage, setSelectedLanguage] = useState("");
+  // current question index
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  // quiz finished
   const [finished, setFinished] = useState(false);
 const quizzes = {
+
+  // quiz questions (add more)
   HTML: [
     {
       question: "Which tag is used to create a hyperlink in HTML?",
@@ -72,27 +77,30 @@ const quizzes = {
 };
 
 
+// handle answer selection
   const handleAnswer = (option) => {
-    setAnswer(option);
+    setAnswer(option); //save answer
     if (option === quizzes[selectedLanguage][currentQuestion].correct) {
       setScore((prev) => prev + 1);
     }
   };
 
   const nextQuestion = () => {
+        // Check if selected option is correct and update score 
     if (currentQuestion < quizzes[selectedLanguage].length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
+      setCurrentQuestion((prev) => prev + 1); //next q
       setAnswer(null);
     } else {
-      setFinished(true);
+      setFinished(true); //completed quiz after last q is answered
     }
   };
 
+  // reset everything 
   const restartQuiz = () => {
     setSelectedLanguage("");
     setCurrentQuestion(0);
     setAnswer(null);
-    setScore(0);
+    setScore(0);//reset score
     setFinished(false);
   };
 
@@ -121,6 +129,8 @@ const quizzes = {
           </div>
         </div>
       ) : finished ? (
+
+        //result when quiz is finished 
         <div className="w-full text-center">
           <h1 className="text-white text-2xl font-bold mb-4">Quiz Finished 🎉</h1>
           <p className="text-white text-lg mb-6">
@@ -133,13 +143,14 @@ const quizzes = {
         </div>
       ) : (
         <>
-          {/* Header */}
+          {/* Header with exit button*/}
           <div className="quiz-header">
             <button className="exit-button" onClick={restartQuiz}>✕</button>
             <div className="progress-bar">
               <div
                 className="progress"
                 style={{
+                  // progress bar (calc how many q's completed)
                   width: `${((currentQuestion + 1) / quizzes[selectedLanguage].length) * 100}%`,
                 }}
               ></div>
@@ -149,10 +160,10 @@ const quizzes = {
             </span>
           </div>
 
-          {/* Timer */}
+          {/* Timer (enable)*/}
           <div className="timer-circle">30</div>
 
-          {/* Question */}
+          {/* Q's text  */}
           <div className="quiz-question">
             {quizzes[selectedLanguage][currentQuestion].question}
           </div>
@@ -163,7 +174,7 @@ const quizzes = {
               let statusClass = "";
               if (answer) {
                 if (option === quizzes[selectedLanguage][currentQuestion].correct) {
-                  statusClass = "correct";
+                  statusClass = "correct";//highlight correct answer
                 } else if (option === answer && option !== quizzes[selectedLanguage][currentQuestion].correct) {
                   statusClass = "incorrect";
                 }
@@ -173,7 +184,7 @@ const quizzes = {
                 <button
                   key={idx}
                   onClick={() => handleAnswer(option)}
-                  disabled={!!answer}
+                  disabled={!!answer}//choose only once
                   className={`option-btn ${statusClass} ${answer === option ? "selected" : ""}`}
                 >
                   {option}
@@ -182,9 +193,10 @@ const quizzes = {
             })}
           </div>
 
-          {/* Next Button */}
+          {/* Next Button (next or finish)*/}
           {answer && (
             <button className="next-btn" onClick={nextQuestion}>
+              {/* finish button for last q */}
               {currentQuestion < quizzes[selectedLanguage].length - 1 ? "Next" : "Finish"}
             </button>
           )}
