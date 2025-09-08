@@ -12,8 +12,9 @@ function QuizPage() {
   const [timeLeft, setTimeLeft] = useState(30);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
 
-  // Use useMemo to prevent quizzes from being recreated on every render
+  // Use useMemo to prevent quizzes from being repeated
   const quizzes = useMemo(() => ({
+    // add more languages and question criteria 
     HTML: [
       {
         question: "Which tag is used to create a hyperlink in HTML?",
@@ -84,11 +85,10 @@ function QuizPage() {
         explanation: "The input() function always returns a string in Python 3.x."
       },
     ],
-  }), []); // Empty dependency array means this only gets created once
-
+  }), []); 
   // Handle answer selection with useCallback to prevent recreation on every render
   const handleAnswer = useCallback((option) => {
-    if (answer) return; // Prevent multiple answers
+    if (answer) return; 
     
     setAnswer(option);
     const isCorrect = option === quizzes[selectedLanguage][currentQuestion].correct;
@@ -97,7 +97,7 @@ function QuizPage() {
       setScore(prev => prev + 1);
     }
     
-    // Record the answered question for review
+    // Record the answered q's
     setAnsweredQuestions(prev => [...prev, {
       question: quizzes[selectedLanguage][currentQuestion].question,
       userAnswer: option,
@@ -105,9 +105,9 @@ function QuizPage() {
       isCorrect,
       explanation: quizzes[selectedLanguage][currentQuestion].explanation
     }]);
-  }, [answer, currentQuestion, selectedLanguage, quizzes]); // Added quizzes to dependencies
+  }, [answer, currentQuestion, selectedLanguage, quizzes]);
 
-  // Timer effect
+  // Timer effect (simulateion still needed)
   useEffect(() => {
     if (selectedLanguage && !finished && timeLeft > 0) {
       const timer = setTimeout(() => {
@@ -115,7 +115,7 @@ function QuizPage() {
       }, 1000);
       return () => clearTimeout(timer);
     } else if (timeLeft === 0 && !answer) {
-      // Time's up, move to next question
+      
       handleAnswer(""); // Empty string indicates time's up
     }
   }, [selectedLanguage, finished, timeLeft, answer, handleAnswer]);

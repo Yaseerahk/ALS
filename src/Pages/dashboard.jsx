@@ -1,12 +1,13 @@
+//dependencies
 import React, { useState } from "react";
 import "./dashboard.css";
 import { useNavigate } from "react-router-dom"; 
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("progress");
-  
-  // Sample user data
+  const [activeTab, setActiveTab] = useState("progress"); // Track currently active tab
+
+  //user profile data
   const userData = {
     name: "Yaseerah Kader",
     streak: 7,
@@ -17,28 +18,28 @@ export default function Dashboard() {
     completedToday: 12
   };
 
-  // Sample progress data
+  //progress per topic
   const progressData = [
     { topic: "JavaScript Basics", progress: 70, lastReviewed: "2 days ago" },
     { topic: "HTML & CSS", progress: 42, lastReviewed: "1 day ago" },
     { topic: "React Fundamentals", progress: 25, lastReviewed: "4 days ago" }
   ];
 
-  // Sample review schedule
+  // Scheduled upcoming reviews
   const reviewSchedule = [
     { topic: "JavaScript Loops", due: "Today", type: "Quiz" },
     { topic: "CSS Flexbox", due: "Tomorrow", type: "Practice" },
     { topic: "React Components", due: "In 2 days", type: "Quiz" }
   ];
 
-  // Sample badges
+  // Badge achievement data
   const badges = [
     { name: "First Quiz", earned: true, description: "Completed your first quiz" },
     { name: "One-Week Streak", earned: true, description: "7 days of consistent learning" },
     { name: "JavaScript Basics", earned: false, description: "Mastered JavaScript fundamentals" }
   ];
 
-  // Sample leaderboard
+  // Leaderboard 
   const leaderboard = [
     { rank: 1, name: "Onalerona", points: 2540, streak: 14 },
     { rank: 2, name: "Alex", points: 2320, streak: 9 },
@@ -47,37 +48,41 @@ export default function Dashboard() {
     { rank: 5, name: "Lebo", points: 1760, streak: 12 }
   ];
 
-  // Sample study groups
+  // Available study groups
   const studyGroups = [
     { name: "JavaScript Beginners", members: 24, topic: "JavaScript" },
     { name: "React Study Group", members: 18, topic: "React" },
     { name: "Web Dev Fundamentals", members: 32, topic: "HTML/CSS" }
   ];
 
+  // Nav to quiz page
   const handleQuizClick = () => {
     navigate("/quiz"); 
   };
 
+  // Handle topic selection (when a topic is clicked)
   const handleTopicClick = (topic) => {
     console.log(`Selected topic: ${topic}`);
     // Navigate to topic page or open module
   };
 
+  // Handle joining a study group (add functionality)
   const handleJoinGroup = (groupName) => {
     console.log(`Joining group: ${groupName}`);
-    // Implement join group functionality
+    // join group functionality
   };
 
   return (
     <div className="dash-shell">
       <div className="phone-card">
-        {/* Top bar */}
+        {/* Top bar with avatar, name, level, and points */}
         <header className="topbar">
           <div className="user-info">
             <div className="avatar">
               <div className="owl-avatar">
+                {/* Avatar icon */}
                 <svg viewBox="0 0 24 24" width="28" height="28">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5h2v7h-2v-7zm1 10.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" fill="currentColor"/>
+                  <path d="..." fill="currentColor"/>
                 </svg>
               </div>
               <span className="status" />
@@ -87,13 +92,14 @@ export default function Dashboard() {
               <p className="user-level">Level {userData.level}</p>
             </div>
           </div>
+          {/* Points button */}
           <button className="icon-button points" aria-label="Points">
             <span className="points-count">{userData.points}</span>
             <span className="points-label">pts</span>
           </button>
         </header>
 
-        {/* Points Progress */}
+        {/* Progress bar  */}
         <section className="points-card">
           <div className="points-progress">
             <div className="points-bar">
@@ -109,7 +115,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Navigation Tabs */}
+        {/* Tab navigation */}
         <nav className="dashboard-tabs">
           <button 
             className={activeTab === "progress" ? "tab active" : "tab"} 
@@ -131,10 +137,10 @@ export default function Dashboard() {
           </button>
         </nav>
 
-        {/* Content based on active tab */}
+        {/* Tab: Progress */}
         {activeTab === "progress" && (
           <>
-            {/* Daily streak & goal */}
+            {/* Daily streak and goal section */}
             <section className="streak-goal-card">
               <div className="streak-section">
                 <div className="flame-icon">🔥</div>
@@ -149,6 +155,7 @@ export default function Dashboard() {
                   <p>{userData.completedToday}/{userData.dailyGoal} mins</p>
                 </div>
                 <div className="goal-circle">
+                  {/* percentage of daily goal completed */}
                   <div className="circle-progress">
                     <span>{Math.round((userData.completedToday / userData.dailyGoal) * 100)}%</span>
                   </div>
@@ -156,7 +163,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Learning progress */}
+            {/* Learning progress per topic */}
             <section className="progress-card">
               <h3 className="section-title">Your Learning Progress</h3>
               <div className="progress-list">
@@ -180,7 +187,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Badges */}
+            {/* Earned and locked badges */}
             <section className="badges-card">
               <div className="section-header">
                 <h3 className="section-title">Achievements</h3>
@@ -203,9 +210,10 @@ export default function Dashboard() {
           </>
         )}
 
+        {/* Tab: Review */}
         {activeTab === "review" && (
           <>
-            {/* Review schedule */}
+            {/* Upcoming review items */}
             <section className="review-card">
               <h3 className="section-title">Upcoming Reviews</h3>
               <p className="section-subtitle">Based on your learning patterns</p>
@@ -222,7 +230,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Recommendations */}
+            {/* topic recommendation (add more funtionality +check) */}
             <section className="recommendations-card">
               <h3 className="section-title">Recommended Next</h3>
               <div className="recommendation-item">
@@ -236,9 +244,10 @@ export default function Dashboard() {
           </>
         )}
 
+        {/* Tab: Social */}
         {activeTab === "social" && (
           <>
-            {/* Leaderboard */}
+            {/* Leaderboard showing rankings */}
             <section className="leaderboard-card">
               <div className="section-header">
                 <h3 className="section-title">Leaderboard</h3>
@@ -256,7 +265,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Study Groups */}
+            {/* Study group suggestions */}
             <section className="groups-card">
               <div className="section-header">
                 <h3 className="section-title">Study Groups</h3>
@@ -282,7 +291,7 @@ export default function Dashboard() {
           </>
         )}
 
-        {/* Quick Actions */}
+        {/* Quick access action buttons */}
         <section className="actions-card">
           <button className="action-btn primary" onClick={handleQuizClick}>
             <span className="action-icon">✏️</span>
