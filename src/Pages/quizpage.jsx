@@ -28,6 +28,56 @@ function QuizPage() {
         correct: "both src and alt",
         explanation: "The <img> tag requires both src (image source) and alt (alternative text for accessibility)."
       },
+      {
+        question: "Which HTML tag is used to define a table row?",
+        options: ["<tr>", "<td>", "<th>", "<table>"],
+        correct: "<tr>",
+        explanation: "The <tr> tag defines a row in an HTML table."
+      },
+      {
+        question: "What is the purpose of the <head> tag in HTML?",
+        options: ["It displays content", "It defines the footer", "It contains metadata", "It links to images"],
+        correct: "It contains metadata",
+        explanation: "The <head> tag contains metadata like title, scripts, and styles, which are not displayed on the page."
+      },
+      {
+        question: "Which tag is used to create an unordered list in HTML?",
+        options: ["<ol>", "<ul>", "<li>", "<list>"],
+        correct: "<ul>",
+        explanation: "The <ul> tag defines an unordered (bulleted) list."
+      },
+      {
+        question: "What does the 'alt' attribute in an <img> tag specify?",
+        options: ["Image size", "Image format", "Alternative text", "Image alignment"],
+        correct: "Alternative text",
+        explanation: "The 'alt' attribute provides alternative text for an image, used for accessibility and when the image cannot load."
+      },
+      {
+        question: "Which tag is used to insert a line break in HTML?",
+        options: ["<br>", "<lb>", "<break>", "<newline>"],
+        correct: "<br>",
+        explanation: "The <br> tag inserts a single line break in the text."
+      },
+      {
+        question: "Which HTML tag is used to create a dropdown list?",
+        options: ["<input>", "<select>", "<dropdown>", "<list>"],
+        correct: "<select>",
+        explanation: "The <select> tag is used to create a dropdown list in HTML forms."
+      },
+      {
+        question: "What is the correct HTML element for inserting a background color?",
+        options: ["<body bgColor='red'>", "<background>", "style='background-color:red;'", "<color>"],
+        correct: "style='background-color:red;'",
+        explanation: "The background color is set using the 'style' attribute with 'background-color' in inline CSS."
+      },
+      {
+        question: "Which tag is used to define the most important heading in HTML?",
+        options: ["<heading>", "<h6>", "<h1>", "<title>"],
+        correct: "<h1>",
+        explanation: "The <h1> tag defines the highest-level heading, typically used for the main title of a page."
+      }
+
+
     ],
     CSS: [
       {
@@ -71,6 +121,17 @@ function QuizPage() {
         explanation: "JSON.parse() converts a JSON string into a JavaScript object."
       },
     ],
+
+    React:[
+      
+        {
+          question: "What hook is used to manage state in a functional React component?",
+          options: ["useEffect", "useState", "useReducer", "useContext"],
+          correct: "useState",
+          explanation: "The 'useState' hook is used to add state to functional components in React."
+      }
+    ],
+
     Python: [
       {
         question: "Which keyword is used to define a function in Python?",
@@ -84,6 +145,8 @@ function QuizPage() {
         correct: "string",
         explanation: "The input() function always returns a string in Python 3.x."
       },
+
+      
     ],
   }), []); 
   // Handle answer selection with useCallback to prevent recreation on every render
@@ -176,7 +239,8 @@ function QuizPage() {
                   lang === "Python" ? "🐍" :
                   lang === "Java" ? "☕" :
                   lang === "HTML" ? "🌐" :
-                  lang === "CSS" ? "🎨" : "📘"}
+                  lang === "CSS" ? "🎨" : "📘"
+                  }
                 </span>
                 <span className="topic-label">{lang}</span>
                 <span className="question-count">
