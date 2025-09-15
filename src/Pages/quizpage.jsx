@@ -81,17 +81,77 @@ function QuizPage() {
     ],
     CSS: [
       {
-        question: "Which property is used to change text color in CSS?",
-        options: ["font-color", "text-color", "color", "background-color"],
-        correct: "color",
-        explanation: "The 'color' property is used to set the color of text in CSS."
+        question: "Which property is used to set the background color of an element?",
+        options: ["color", "bgcolor", "background-color", "background"],
+        correct: "background-color",
+        explanation: "The 'background-color' property is used to set the background color of an element in CSS."
       },
       {
-        question: "Which CSS unit is relative to the root element?",
-        options: ["em", "rem", "%", "px"],
-        correct: "rem",
-        explanation: "'rem' units are relative to the root element's font size, while 'em' is relative to the parent element."
+        question: "What does the 'display: flex' property do?",
+        options: ["Aligns text", "Creates a flex container", "Hides the element", "Sets background color"],
+        correct: "Creates a flex container",
+        explanation: "'display: flex' turns an element into a flex container, enabling flexible layouts for its children."
       },
+      {
+        question: "Which property is used to control the space between lines of text?",
+        options: ["letter-spacing", "line-height", "text-spacing", "font-size"],
+        correct: "line-height",
+        explanation: "The 'line-height' property sets the vertical space between lines of text."
+      },
+      {
+        question: "How do you select an element with the ID 'main' in CSS?",
+        options: ["#main", ".main", "main", "@main"],
+        correct: "#main",
+        explanation: "In CSS, the '#' symbol is used to select elements by their ID."
+      },
+      {
+        question: "Which property controls the size of text?",
+        options: ["font-style", "text-size", "font-size", "text-style"],
+        correct: "font-size",
+        explanation: "The 'font-size' property is used to set the size of the text content."
+      },
+      {
+        question: "What is the default position value of an HTML element?",
+        options: ["absolute", "relative", "static", "fixed"],
+        correct: "static",
+        explanation: "By default, elements have 'position: static', meaning they are positioned according to the normal document flow."
+      },
+      {
+        question: "Which property is used to make text bold in CSS?",
+        options: ["font-style", "font-weight", "text-decoration", "bold"],
+        correct: "font-weight",
+        explanation: "'font-weight' is used to set how thick or thin characters in text should appear. 'font-weight: bold;' makes text bold."
+      },
+      {
+        question: "Which shorthand property sets the top, right, bottom, and left margins?",
+        options: ["padding", "margin", "spacing", "border"],
+        correct: "margin",
+        explanation: "'margin' is a shorthand property that allows you to set all four margins (top, right, bottom, left) in one line."
+      },
+      {
+        question: "What is the difference between 'em' and 'rem' units in CSS?",
+        options: [
+          "'em' is relative to the parent element's font size, 'rem' is relative to the root element's font size",
+          "'em' is always absolute, 'rem' is relative to the parent element",
+          "'em' and 'rem' are identical and interchangeable",
+          "'em' is relative to the viewport width, 'rem' is relative to the viewport height"
+        ],
+        correct: "'em' is relative to the parent element's font size, 'rem' is relative to the root element's font size",
+        explanation: "'em' units are relative to the font size of the parent element, which means they compound when nested. 'rem' units are relative to the font size of the root (html) element, making them consistent throughout the document."
+      },
+      {
+        question: "How does the CSS 'contain' property improve performance?",
+        options: [
+          "By limiting the scope of the browser’s rendering, layout, and style calculations to a specific element",
+          "By forcing the browser to reload stylesheets",
+          "By disabling animations and transitions on the page",
+          "By compressing CSS files automatically"
+        ],
+        correct: "By limiting the scope of the browser’s rendering, layout, and style calculations to a specific element",
+        explanation: "The 'contain' property allows developers to specify that an element’s subtree is independent from the rest of the document, enabling browsers to optimize rendering and improve performance by limiting layout, style, and paint calculations."
+      }
+
+
     ],
     Java: [
       {
@@ -106,6 +166,55 @@ function QuizPage() {
         correct: "string",
         explanation: "'String' is a class in Java, not a primitive type. The primitive types are byte, short, int, long, float, double, boolean, and char."
       },
+      {
+        question: "Which method is the entry point of any Java program?",
+        options: ["start()", "main()", "run()", "init()"],
+        correct: "main()",
+        explanation: "The 'main()' method is the entry point of every Java application. It has the signature: public static void main(String[] args)."
+      },
+      {
+        question: "What is the size of an int in Java?",
+        options: ["8 bits", "16 bits", "32 bits", "64 bits"],
+        correct: "32 bits",
+        explanation: "In Java, the 'int' data type is a 32-bit signed two's complement integer."
+      },
+      {
+        question: "Which keyword is used to prevent inheritance of a class?",
+        options: ["static", "final", "const", "private"],
+        correct: "final",
+        explanation: "The 'final' keyword prevents a class from being subclassed (inherited)."
+      },
+      {
+        question: "What is the default value of a boolean variable in Java?",
+        options: ["true", "false", "null", "0"],
+        correct: "false",
+        explanation: "In Java, the default value of a boolean is 'false'."
+      },
+      {
+        question: "Which of the following is used to handle exceptions in Java?",
+        options: ["catch", "error", "try-catch", "exception"],
+        correct: "try-catch",
+        explanation: "Java uses 'try-catch' blocks to handle exceptions and prevent program crashes."
+      },
+      {
+        question: "What does JVM stand for?",
+        options: ["Java Verified Machine", "Java Virtual Machine", "Java Variable Method", "Java Version Manager"],
+        correct: "Java Virtual Machine",
+        explanation: "JVM stands for Java Virtual Machine, which allows Java bytecode to be executed on any device."
+      },
+      {
+        question: "Which collection class does not allow duplicate elements?",
+        options: ["List", "ArrayList", "Set", "Map"],
+        correct: "Set",
+        explanation: "The 'Set' interface in Java does not allow duplicate elements, unlike List or ArrayList."
+      },
+      {
+        question: "What is the purpose of the 'super' keyword in Java?",
+        options: ["To call the parent class constructor or method", "To define a constant", "To stop a loop", "To create a superclass"],
+        correct: "To call the parent class constructor or method",
+        explanation: "The 'super' keyword is used to refer to the immediate parent class and is often used to invoke parent constructors or methods."
+      }
+
     ],
     JavaScript: [
       {
@@ -120,6 +229,55 @@ function QuizPage() {
         correct: "JSON.parse()",
         explanation: "JSON.parse() converts a JSON string into a JavaScript object."
       },
+      {
+        question: "Which symbol is used for single-line comments in JavaScript?",
+        options: ["<!-- -->", "//", "/* */", "#"],
+        correct: "//",
+        explanation: "// is used to write single-line comments in JavaScript."
+      },
+      {
+        question: "What is the output of 'typeof null' in JavaScript?",
+        options: ["null", "object", "undefined", "boolean"],
+        correct: "object",
+        explanation: "Due to a long-standing bug in JavaScript, 'typeof null' returns 'object'."
+      },
+      {
+        question: "What is the result of '2' + 2 in JavaScript?",
+        options: ["4", "22", "NaN", "undefined"],
+        correct: "22",
+        explanation: "When using the '+' operator with a string and a number, JavaScript performs string concatenation."
+      },
+      {
+        question: "Which keyword is used to define a function in JavaScript?",
+        options: ["define", "function", "fun", "method"],
+        correct: "function",
+        explanation: "The 'function' keyword is used to declare functions in JavaScript."
+      },
+      {
+        question: "Which array method adds an element to the end of an array?",
+        options: ["push()", "pop()", "shift()", "unshift()"],
+        correct: "push()",
+        explanation: "The 'push()' method adds one or more elements to the end of an array."
+      },
+      {
+        question: "Which value is considered falsy in JavaScript?",
+        options: ["0", "'' (empty string)", "null", "All of the above"],
+        correct: "All of the above",
+        explanation: "Falsy values in JavaScript include 0, '', null, undefined, NaN, and false."
+      },
+      {
+        question: "What is the scope of a variable declared with 'let'?",
+        options: ["Global", "Function", "Block", "Module"],
+        correct: "Block",
+        explanation: "'let' is block-scoped, meaning it is only accessible within the enclosing block."
+      },
+      {
+        question: "Which method is used to convert a JavaScript object to a JSON string?",
+        options: ["JSON.stringify()", "JSON.parse()", "toString()", "JSON.toText()"],
+        correct: "JSON.stringify()",
+        explanation: "'JSON.stringify()' converts a JavaScript object or value to a JSON-formatted string."
+      }
+
     ],
 
     React:[
@@ -129,7 +287,62 @@ function QuizPage() {
           options: ["useEffect", "useState", "useReducer", "useContext"],
           correct: "useState",
           explanation: "The 'useState' hook is used to add state to functional components in React."
+      },
+      {
+        question: "Which hook is used to perform side effects in a React component?",
+        options: ["useState", "useEffect", "useMemo", "useRef"],
+        correct: "useEffect",
+        explanation: "The 'useEffect' hook is used to perform side effects such as data fetching, subscriptions, or DOM manipulation."
+      },
+      {
+        question: "What does JSX stand for?",
+        options: ["JavaScript XML", "Java Syntax Extension", "JSON XML", "JavaScript Extension"],
+        correct: "JavaScript XML",
+        explanation: "JSX stands for JavaScript XML, and it allows writing HTML-like syntax directly in JavaScript."
+      },
+      {
+        question: "What prop is used to uniquely identify items in a list?",
+        options: ["id", "key", "index", "value"],
+        correct: "key",
+        explanation: "The 'key' prop helps React identify which items have changed, are added, or are removed."
+      },
+      {
+        question: "Which method is used to pass data from a parent to a child component?",
+        options: ["state", "props", "context", "setState"],
+        correct: "props",
+        explanation: "Props (short for properties) are used to pass data from parent to child components in React."
+      },
+      {
+        question: "What does the useContext hook do?",
+        options: ["Manages local state", "Creates global state", "Consumes context", "Fetches data"],
+        correct: "Consumes context",
+        explanation: "The 'useContext' hook allows a component to consume values from a context without using a Consumer wrapper."
+      },
+      {
+        question: "Which React hook is used to memoize a value?",
+        options: ["useMemo", "useEffect", "useRef", "useCallback"],
+        correct: "useMemo",
+        explanation: "'useMemo' returns a memoized value and helps avoid expensive calculations on every render."
+      },
+      {
+        question: "Which lifecycle method does useEffect replicate?",
+        options: ["componentDidMount", "componentDidUpdate", "componentWillUnmount", "All of the above"],
+        correct: "All of the above",
+        explanation: "'useEffect' can replicate all three: componentDidMount, componentDidUpdate, and componentWillUnmount depending on its dependency array."
+      },
+      {
+        question: "What is the purpose of React.Fragment?",
+        options: ["To create a reusable component", "To add styles", "To return multiple elements without a wrapper", "To manage state"],
+        correct: "To return multiple elements without a wrapper",
+        explanation: "React.Fragment lets you group multiple elements without adding extra nodes to the DOM."
+      },
+      {
+        question: "How do you create a new React app using Create React App?",
+        options: ["npm create-react-app myApp", "npx create-react-app myApp", "react-create-app myApp", "npx react-app myApp"],
+        correct: "npx create-react-app myApp",
+        explanation: "The official way to create a new React app is by using 'npx create-react-app myApp'."
       }
+
     ],
 
     Python: [
@@ -145,6 +358,55 @@ function QuizPage() {
         correct: "string",
         explanation: "The input() function always returns a string in Python 3.x."
       },
+      {
+        question: "What is the output of the expression '5 // 2' in Python?",
+        options: ["2.5", "2", "3", "1"],
+        correct: "2",
+        explanation: "'//' is the floor division operator, which returns the quotient without the remainder."
+      },
+      {
+        question: "Which keyword is used to create a class in Python?",
+        options: ["class", "def", "object", "struct"],
+        correct: "class",
+        explanation: "The 'class' keyword is used to define a new class in Python."
+      },
+      {
+        question: "What does the 'len()' function do in Python?",
+        options: ["Returns the length of an object", "Converts a value to integer", "Prints a value", "Defines a list"],
+        correct: "Returns the length of an object",
+        explanation: "'len()' returns the number of items in an object like a list, string, tuple, etc."
+      },
+      {
+        question: "How do you start a comment in Python?",
+        options: ["//", "#", "/*", "<!--"],
+        correct: "#",
+        explanation: "In Python, comments start with the '#' symbol."
+      },
+      {
+        question: "What is the output of the following code? print(type([]))",
+        options: ["list", "tuple", "dict", "set"],
+        correct: "list",
+        explanation: "An empty pair of square brackets '[]' represents a list in Python."
+      },
+      {
+        question: "Which of the following is a mutable data type in Python?",
+        options: ["tuple", "list", "string", "int"],
+        correct: "list",
+        explanation: "Lists are mutable, meaning their elements can be changed after creation."
+      },
+      {
+        question: "Which keyword is used to handle exceptions in Python?",
+        options: ["try", "catch", "except", "finally"],
+        correct: "except",
+        explanation: "The 'except' block is used to catch and handle exceptions after a 'try' block."
+      },
+      {
+        question: "What is the output of: bool('False')?",
+        options: ["False", "True", "Error", "None"],
+        correct: "True",
+        explanation: "Any non-empty string in Python evaluates to True when converted to a boolean."
+      }
+
 
       
     ],

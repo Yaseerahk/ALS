@@ -1,13 +1,13 @@
-//dependencies
+// dependencies
 import React, { useState } from "react";
 import "./dashboard.css";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("progress"); // Track currently active tab
+  const [activeTab, setActiveTab] = useState("progress");
 
-  //user profile data
+  // user profile data
   const userData = {
     name: "Yaseerah Kader",
     streak: 7,
@@ -18,28 +18,28 @@ export default function Dashboard() {
     completedToday: 12
   };
 
-  //progress per topic
+  // progress per topic
   const progressData = [
     { topic: "JavaScript Basics", progress: 70, lastReviewed: "2 days ago" },
     { topic: "HTML & CSS", progress: 42, lastReviewed: "1 day ago" },
     { topic: "React Fundamentals", progress: 25, lastReviewed: "4 days ago" }
   ];
 
-  // Scheduled upcoming reviews
+  // scheduled reviews
   const reviewSchedule = [
     { topic: "JavaScript Loops", due: "Today", type: "Quiz" },
     { topic: "CSS Flexbox", due: "Tomorrow", type: "Practice" },
     { topic: "React Components", due: "In 2 days", type: "Quiz" }
   ];
 
-  // Badge achievement data
+  // badges
   const badges = [
     { name: "First Quiz", earned: true, description: "Completed your first quiz" },
     { name: "One-Week Streak", earned: true, description: "7 days of consistent learning" },
     { name: "JavaScript Basics", earned: false, description: "Mastered JavaScript fundamentals" }
   ];
 
-  // Leaderboard 
+  // leaderboard
   const leaderboard = [
     { rank: 1, name: "Onalerona", points: 2540, streak: 14 },
     { rank: 2, name: "Alex", points: 2320, streak: 9 },
@@ -48,41 +48,46 @@ export default function Dashboard() {
     { rank: 5, name: "Lebo", points: 1760, streak: 12 }
   ];
 
-  // Available study groups
+  // ✅ WhatsApp-enabled study group list
   const studyGroups = [
-    { name: "JavaScript Beginners", members: 24, topic: "JavaScript" },
-    { name: "React Study Group", members: 18, topic: "React" },
-    { name: "Web Dev Fundamentals", members: 32, topic: "HTML/CSS" }
+    {
+      name: "Adaptive learning journey",
+      topic: "Programming",
+      members: 34,
+      whatsappLink: "https://chat.whatsapp.com/HIszNcWjPlCBIh1wJaRQpy?mode=ems_copy_t"
+    }
   ];
 
-  // Nav to quiz page
+  // quiz navigation
   const handleQuizClick = () => {
-    navigate("/quiz"); 
+    navigate("/quiz");
   };
 
-  // Handle topic selection (when a topic is clicked)
+  // handle topic click
   const handleTopicClick = (topic) => {
     console.log(`Selected topic: ${topic}`);
-    // Navigate to topic page or open module
   };
 
-  // Handle joining a study group (add functionality)
+  // ✅ join WhatsApp group logic
   const handleJoinGroup = (groupName) => {
-    console.log(`Joining group: ${groupName}`);
-    // join group functionality
+    const group = studyGroups.find(g => g.name === groupName);
+    if (group?.whatsappLink) {
+      window.open(group.whatsappLink, "_blank");
+    } else {
+      alert("Group link not available.");
+    }
   };
 
   return (
     <div className="dash-shell">
       <div className="phone-card">
-        {/* Top bar with avatar, name, level, and points */}
+        {/* Top bar */}
         <header className="topbar">
           <div className="user-info">
             <div className="avatar">
               <div className="owl-avatar">
-                {/* Avatar icon */}
                 <svg viewBox="0 0 24 24" width="28" height="28">
-                  <path d="..." fill="currentColor"/>
+                  <path d="..." fill="currentColor" />
                 </svg>
               </div>
               <span className="status" />
@@ -92,19 +97,18 @@ export default function Dashboard() {
               <p className="user-level">Level {userData.level}</p>
             </div>
           </div>
-          {/* Points button */}
           <button className="icon-button points" aria-label="Points">
             <span className="points-count">{userData.points}</span>
             <span className="points-label">pts</span>
           </button>
         </header>
 
-        {/* Progress bar  */}
+        {/* Progress card */}
         <section className="points-card">
           <div className="points-progress">
             <div className="points-bar">
-              <div 
-                className="points-fill" 
+              <div
+                className="points-fill"
                 style={{ width: `${(userData.points / userData.nextLevelPoints) * 100}%` }}
               ></div>
             </div>
@@ -115,24 +119,15 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Tab navigation */}
+        {/* Tab nav */}
         <nav className="dashboard-tabs">
-          <button 
-            className={activeTab === "progress" ? "tab active" : "tab"} 
-            onClick={() => setActiveTab("progress")}
-          >
+          <button className={activeTab === "progress" ? "tab active" : "tab"} onClick={() => setActiveTab("progress")}>
             Progress
           </button>
-          <button 
-            className={activeTab === "review" ? "tab active" : "tab"} 
-            onClick={() => setActiveTab("review")}
-          >
+          <button className={activeTab === "review" ? "tab active" : "tab"} onClick={() => setActiveTab("review")}>
             Review
           </button>
-          <button 
-            className={activeTab === "social" ? "tab active" : "tab"} 
-            onClick={() => setActiveTab("social")}
-          >
+          <button className={activeTab === "social" ? "tab active" : "tab"} onClick={() => setActiveTab("social")}>
             Social
           </button>
         </nav>
@@ -140,7 +135,6 @@ export default function Dashboard() {
         {/* Tab: Progress */}
         {activeTab === "progress" && (
           <>
-            {/* Daily streak and goal section */}
             <section className="streak-goal-card">
               <div className="streak-section">
                 <div className="flame-icon">🔥</div>
@@ -155,7 +149,6 @@ export default function Dashboard() {
                   <p>{userData.completedToday}/{userData.dailyGoal} mins</p>
                 </div>
                 <div className="goal-circle">
-                  {/* percentage of daily goal completed */}
                   <div className="circle-progress">
                     <span>{Math.round((userData.completedToday / userData.dailyGoal) * 100)}%</span>
                   </div>
@@ -163,7 +156,6 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Learning progress per topic */}
             <section className="progress-card">
               <h3 className="section-title">Your Learning Progress</h3>
               <div className="progress-list">
@@ -175,10 +167,7 @@ export default function Dashboard() {
                     </div>
                     <div className="progress-visual">
                       <div className="progress-bar">
-                        <div 
-                          className="progress-fill" 
-                          style={{ width: `${item.progress}%` }}
-                        ></div>
+                        <div className="progress-fill" style={{ width: `${item.progress}%` }}></div>
                       </div>
                       <span className="progress-percent">{item.progress}%</span>
                     </div>
@@ -187,7 +176,6 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Earned and locked badges */}
             <section className="badges-card">
               <div className="section-header">
                 <h3 className="section-title">Achievements</h3>
@@ -196,9 +184,7 @@ export default function Dashboard() {
               <div className="badges-grid">
                 {badges.map((badge, index) => (
                   <div key={index} className={badge.earned ? "badge earned" : "badge locked"}>
-                    <div className="badge-icon">
-                      {badge.earned ? "★" : "🔒"}
-                    </div>
+                    <div className="badge-icon">{badge.earned ? "★" : "🔒"}</div>
                     <div className="badge-info">
                       <h4>{badge.name}</h4>
                       <p>{badge.description}</p>
@@ -213,7 +199,6 @@ export default function Dashboard() {
         {/* Tab: Review */}
         {activeTab === "review" && (
           <>
-            {/* Upcoming review items */}
             <section className="review-card">
               <h3 className="section-title">Upcoming Reviews</h3>
               <p className="section-subtitle">Based on your learning patterns</p>
@@ -230,7 +215,6 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* topic recommendation (add more funtionality +check) */}
             <section className="recommendations-card">
               <h3 className="section-title">Recommended Next</h3>
               <div className="recommendation-item">
@@ -244,10 +228,9 @@ export default function Dashboard() {
           </>
         )}
 
-        {/* Tab: Social */}
+        {/* ✅ Tab: Social */}
         {activeTab === "social" && (
           <>
-            {/* Leaderboard showing rankings */}
             <section className="leaderboard-card">
               <div className="section-header">
                 <h3 className="section-title">Leaderboard</h3>
@@ -265,7 +248,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Study group suggestions */}
+            {/* ✅ Study Groups */}
             <section className="groups-card">
               <div className="section-header">
                 <h3 className="section-title">Study Groups</h3>
@@ -278,10 +261,7 @@ export default function Dashboard() {
                       <h4>{group.name}</h4>
                       <p>{group.topic} • {group.members} members</p>
                     </div>
-                    <button 
-                      className="join-btn"
-                      onClick={() => handleJoinGroup(group.name)}
-                    >
+                    <button className="join-btn" onClick={() => handleJoinGroup(group.name)}>
                       Join
                     </button>
                   </div>
@@ -291,7 +271,7 @@ export default function Dashboard() {
           </>
         )}
 
-        {/* Quick access action buttons */}
+        {/* Quick actions */}
         <section className="actions-card">
           <button className="action-btn primary" onClick={handleQuizClick}>
             <span className="action-icon">✏️</span>
