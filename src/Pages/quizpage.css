@@ -7,15 +7,15 @@
   --primary-light: #8119e2;
   --secondary: #d400ff;
   --white: #bbc5df7e;
-  --gray-light: #1448d67e;
-  --gray: #1448d67e;
-  --gray-dark: #1448d67e;
+  --blue: #1448d67e;
+  --blue: #1448d67e;
+  --blue: #1448d67e;
   --text: #3c3c3c;
-  --text-light: #000000;
-  --red: #ff4b4b;
+  --text-dark: #000000;
+  --green: #38cc3f;
   --blue: #1cb0f6;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --card-radius: 16px;
+  --card-radius: 16px; 
 }
 
 * {

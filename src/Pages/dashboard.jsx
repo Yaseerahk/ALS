@@ -48,7 +48,7 @@ export default function Dashboard() {
     { rank: 5, name: "Lebo", points: 1760, streak: 12 }
   ];
 
-  // ✅ WhatsApp-enabled study group list
+  // WhatsApp-enabled study group list
   const studyGroups = [
     {
       name: "Adaptive learning journey",
@@ -68,7 +68,7 @@ export default function Dashboard() {
     console.log(`Selected topic: ${topic}`);
   };
 
-  // ✅ join WhatsApp group logic
+  // join WhatsApp group logic
   const handleJoinGroup = (groupName) => {
     const group = studyGroups.find(g => g.name === groupName);
     if (group?.whatsappLink) {
