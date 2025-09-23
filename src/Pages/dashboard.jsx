@@ -228,7 +228,7 @@ export default function Dashboard() {
           </>
         )}
 
-        {/* ✅ Tab: Social */}
+        {/*  Tab: Social */}
         {activeTab === "social" && (
           <>
             <section className="leaderboard-card">
@@ -248,7 +248,7 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* ✅ Study Groups */}
+            {/*  Study Groups */}
             <section className="groups-card">
               <div className="section-header">
                 <h3 className="section-title">Study Groups</h3>
