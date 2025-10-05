@@ -1,20 +1,18 @@
-
 .wrapper {
   position: relative;
   width: 420px;
   min-height: 480px;
-  background: linear-gradient(135deg, #3a3d98, #5e60ce);
+  background: linear-gradient(135deg, #ff6a00, #ee0979); /* Warm gradient for energy */
   border-radius: 16px;
   padding: 40px;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   transition: all 0.3s ease;
 }
-
 
 .form-box {
   width: 100%;
@@ -25,8 +23,9 @@ form h1 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 .input-box {
   position: relative;
@@ -38,18 +37,20 @@ form h1 {
 .input-box input {
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 40px;
   font-size: 16px;
   color: #fff;
   padding: 0 45px 0 20px;
   transition: 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .input-box input:focus {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffd369;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 215, 105, 0.5);
 }
 
 .input-box input::placeholder {
@@ -68,7 +69,7 @@ form h1 {
 .remember-forgot {
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
   font-size: 14px;
   margin: -10px 0 20px;
 }
@@ -80,32 +81,33 @@ form h1 {
 }
 
 .remember-forgot input[type="checkbox"] {
-  accent-color: #fff;
+  accent-color: #ffd369;
 }
 
+/* Move "Forgot password?" more to the left */
 .remember-forgot .link-button {
   background: none;
   border: none;
-  color: #f0f0f0;
+  color: #ffe08a;
   text-decoration: underline;
   cursor: pointer;
   font-size: 14px;
   padding: 0;
   transition: color 0.3s;
+  margin-left: -10px; /* Shift slightly left */
 }
 
 .remember-forgot .link-button:hover {
-  color: #ffd369;
-  
+  color: #fff;
 }
 
 form button {
   width: 100%;
   height: 45px;
-  background: #fff;
+  background: #ffd369;
   border: none;
   border-radius: 40px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   font-size: 16px;
   color: #333;
@@ -114,11 +116,10 @@ form button {
 }
 
 form button:hover {
-  background: #ffd369;
-  color: #333;
+  background: #ffb84d;
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
-
 
 .register-link {
   font-size: 14px;

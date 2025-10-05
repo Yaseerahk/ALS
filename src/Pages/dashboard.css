@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #a402cc;
-  --primary-dark: #8643a0;
-  --primary-light: #9819e2;
-  --secondary: #1100ff;
+  --primary: #ffb84d;
+  --primary-dark: #ffb84d;
+  --primary-light: #ffb84d;
+  --secondary: #ffb84d;
   --white: #ffffff;
   --gray-light: #f5f5f5;
   --gray: #e5e5e5;
   --gray-dark: #9ca3af;
   --text: #3c3c3c;
   --text-light: #666666;
-  --red: #ff4b4b;
+  --red: #ffb84d;
   --blue: #1cb0f6;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --card-radius: 16px;
