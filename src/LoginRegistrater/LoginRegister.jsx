@@ -70,7 +70,7 @@ const LoginRegister = ({ setIsAuthenticated }) => {
 
               <div className="remember-forgot">
                 <label><input type="checkbox" /> Remember Me</label>
-                <button type="button" className="link-button">Forgot password?</button>
+               
               </div>
 
 
@@ -119,7 +119,7 @@ const LoginRegister = ({ setIsAuthenticated }) => {
 
               <div className="remember-forgot">
                 <label><input type="checkbox" /> I agree to the terms & conditions</label>
-                <button type="button" className="link-button">Forgot password?</button>
+               
               </div>
 
 
